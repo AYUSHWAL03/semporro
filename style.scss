@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@1&display=swap');
+@import url("https://use.typekit.net/yxk8vxv.css");
+$font: 'DM Serif Display',serif;
+$font2: "cooper-black-std", serif;
+*{
+    padding: 0px;
+    margin: 0px;
+    box-shadow: none;
+}
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: 767px) {
+      @content
+    }
+  } @else if $breakpoint == "medium" {
+    @media (min-width: 768px) and (max-width: 991px) {
+      @content;
+    }
+  } @else {
+    // Handle other breakpoints as needed
+    @content;
+  }
+}
+html {
+    font-size: 62.5%; 
+    overflow-x: hidden;
+    @include breakpoint("medium") {
+      font-size: 56.25%;  
+    }
+    @include breakpoint("small") {
+      font-size: 50%;  
+    }
+   }
+#logo{
+    width: 13rem;
+    height: 13rem;
+}
+.header{
+  display: flex;
+  color: black;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  .nav-list{
+    list-style-type: none;
+  }
+  .list-item{
+    display: inline-block;
+    font-size: 2rem;
+    padding: 2rem 4rem;
+    a{
+      text-decoration: none;
+      color: black;
+      font-family: $font;
+      font-weight: bold;
+    }
+  }
+}
+.menu-btn{
+  visibility: hidden;
+}
+.headline{
+  position: absolute;
+  z-index: 1;
+  top: 20rem;
+  width: 100%;
+  height: 70vh;
+  padding-left: 18rem;
+  font-family: $font;
+  font-size: 5rem;
+  .secondHeadline{
+    position: relative;
+    top: 2rem;
+    font-size: 3.5rem;
+    // text-align: justify;
+    font-weight:  bolder;
+    align-content: stretch;
+  }
+}
+.shop-btn{
+  position: relative;
+  top: 5rem;
+  background-color: #112735;
+  color: #fdfdf7;
+  font-family: $font;
+  font-size: 2rem;
+  padding: 1rem 3rem;
+  border-radius: 3rem;
+}
+.hanger-img{
+  position: absolute;
+  top: 6rem;
+  right: 16rem;
+}
+.firstPage{
+  background-color: #d4d9df;
+  height: 100vh;
+}
+.secondSec{
+  position: relative;
+  top: 6rem;
+  font-family: $font;
+  width: 100%;
+  background-color: #ffffff;
+  height: 20rem;
+  .gridView{
+    display: grid;
+    width: 60%;
+    position: relative;
+    left: 20%;
+    grid-template-columns: repeat(5,auto);
+    .listItem{
+      padding: 2rem 0rem;
+      text-align: center;
+      font-size: 1.5rem;
+      h3{
+        padding: 1rem;
+      }
+      }
+    }
+  }
+  
+  .secondSecText{
+    text-align: center;
+    font-size: 2rem;}
+.thirdSec{
+  width: 100vw;
+  height: 145vh;
+  position: relative;
+  top:14rem;
+  background-image: url('background1.jpg');
+  .thirdSecText{
+    padding: 4rem 15rem;
+    font-family: $font;
+    font-size: 3rem;
+  }
+}
+.imageDisplay{
+  height: 60vh;
+  .stylishCloth{
+    position: relative;
+    top: 4rem;
+    left: 13rem;
+    font-family: $font2;
+    .overlayText{
+      width: 40rem;
+      img{
+        
+        width: 40rem;
+        height: 30rem;
+        aspect-ratio: 1/1;
+        box-shadow: 0.1rem 0.4rem 1rem black;
+      }
+      h2{
+        position: relative;
+        opacity: 0;
+        top: -15rem;
+        left: 15rem;
+        z-index:1;
+        backface-visibility:hidden; 
+      }
+    }
+    .overlayText:hover{
+      img{
+        opacity: 0.3;
+
+      }
+      h2{
+        opacity: 1;
+      }      
+    }
+    // img::before{
+    //   // box-shadow: 0.1rem 1rem 2rem 0.5rem black inset;
+    //   background-color: rgba(0,0,0,0.2);
+    // }
+    .outsideText{
+      padding: 1rem;
+      font-size: 1.5rem;
+      position: relative;
+      top: 0%;
+    }
+  }
+  .comfortableCloth{
+    position: relative;
+    top: -9rem;
+    left: 45rem;
+    z-index: 9999;
+    font-family: $font2;
+    .overlayText{
+      width: 50rem;
+      img{
+        width: 50rem;
+        height: 35rem;
+        aspect-ratio: 1/1;
+        box-shadow: 0.1rem 0.4rem 1rem black;
+        
+      }
+      h2{
+        position: relative;
+        opacity: 0;
+        top: -18rem;
+        left: 19rem;
+        z-index:1;
+        backface-visibility:hidden; 
+      }
+    }
+    .overlayText:hover{
+      img{
+        opacity: 0.3;
+
+      }
+      h2{
+        opacity: 1;
+      }      
+    }
+    
+    .outsideText{
+      padding: 1rem;
+      font-size: 1.5rem;
+      position: relative;
+      top: 0%;
+    }
+    
+  }
+  .softCloth{
+    font-family: $font2;
+    position: relative;
+    top: -25rem;
+    right: -90rem;
+    .overlayText{
+      width: 40rem;
+      img{
+        
+        width: 40rem;
+        height: 25rem;
+        aspect-ratio: 1/1;
+        box-shadow: 0.1rem 0.4rem 1rem black;
+      }
+      h2{
+        position: relative;
+        opacity: 0;
+        top: -13rem;
+        left: 18rem;
+        z-index:1;
+        backface-visibility:hidden; 
+      }
+    }
+    .overlayText:hover{
+      img{
+        opacity: 0.3;
+
+      }
+      h2{
+        opacity: 1;
+      }      
+    }
+    .outsideText{
+      padding: 1rem;
+      font-size: 1.5rem;
+      position: relative;
+      top: 0%;
+    }
+    // img{
+    //   width: 40rem;
+    //   height: 25rem;
+    //   aspect-ratio: 1/1;
+    //   box-shadow: 0.1rem 0.4rem 1rem black;
+    // }
+    // h2{
+    //   padding: 1rem;
+    // }
+  }
+}
+
+.fourthSec{
+  position: relative;
+  top: 14rem;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('background2.png');
+  // transform: scaleX(-1);
+  background-size: cover;
+  .fourthSecText{
+    position: relative;
+    top: 50rem;
+    font-family: $font2;
+    font-size: 2rem;
+    left: 10rem;
+    .fourthBtn{
+      padding: 1.7rem 5rem;
+      font-family: $font;
+      margin: 3rem 1rem;
+      font-size: 1.7rem;
+      text-transform: uppercase;
+      border-color: #112735;
+      border-radius: 3rem;
+      background-color: #112735;
+      color: #fdfdf7;
+    }
+  }
+}
+.fifthSec{
+  position: relative;
+  top: 14rem;
+  width: 100vw;
+  height: 130vh;
+  background-color: #b4b9b2;
+  .fifthSecText{
+    position: relative;
+    top: 8rem;
+    left: 20rem;
+    h1{
+      font-size: 5rem;
+      font-family: $font;
+    }
+    h2{
+      font-family: $font2;
+      font-size: 2rem;
+    }
+  }
+  .sliderImg{
+    position: relative;
+    top: 17rem;
+    left: 20rem;
+    width: 80vw;
+    height:65vh;
+    gap: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    
+    .firstImg{
+      text-align: center;
+      height: 40rem;
+      width: 27rem;
+      padding: 20% 0;
+      opacity: 0.5;
+      font-family: $font;
+      img{
+        width: 25rem;
+        height: 20rem;
+        box-shadow: 0.1rem 0.4rem 1rem black;
+      }
+      h2{
+        font-size: 2.5rem;
+        padding: 2rem 0;
+      }
+    }
+    .secondImg{
+      text-align: center;
+      font-family: $font;
+      img{
+        width: 60rem;
+        height: 40rem;
+        box-shadow: 0.1rem 0.4rem 1rem black;
+      }
+      h2{
+        font-size: 4rem;
+        padding: 4rem 0;
+      }
+      .explore{
+        border-radius: 3.5rem;
+        text-decoration: none;
+        font-size: 2rem;
+        color: white;
+        font-family: $font;
+        
+        padding: 2rem 5rem;
+        background-color: #112735;
+      }
+    }
+    .thirdImg{
+      text-align: center;
+      font-family: $font;
+      height: 40rem;
+      width: 29rem;
+      padding: 20% 0;
+      opacity: 0.5;
+      img{
+        width: 25rem;
+        height: 20rem;
+        box-shadow: 0.1rem 0.4rem 1rem black;
+      }
+      h2{
+        font-size: 2.5rem;
+        padding: 2rem 0;
+      }
+    }
+  }
+}
+.lastSec {
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  top: 14rem;
+
+  .contactForm {
+    position: relative;
+    top: 12rem;
+    left: 30rem;
+    font-family: $font;
+    font-size: 2rem;
+
+    .aboutSec {
+      display: flex;
+      padding: 1rem 0;
+
+      .fields {
+        width: 20vw;
+
+      }
+        .secondcol {
+          text-align: left;
+          // width: 30rem;
+          .inputFields{
+            padding: 1rem;
+            border: none;
+            border-bottom: #112735 0.1rem solid;
+            font-family: $font;
+            font-size: 2rem;
+          }
+        }
+    }
+    .submitBtn{
+      background-color: #112735;
+      color: white;
+      padding: 1rem 4rem;
+      border-radius: 3rem;
+      position: relative;
+      top: 2rem;
+      font-size: 2rem;
+      font-family: $font;
+      left: 30rem;
+    }
+  }
+  .gridHandles{
+      position: relative;
+      bottom: 2rem;
+      left: 100rem;
+      width: 13rem;
+      display: grid;
+      grid-template-columns: auto auto;
+    .logoLastSec{
+      width: 13rem;
+      height: 13rem;
+      grid-column: 1/3;
+    }
+    .fa-instagram{
+      font-size: 4rem;
+      width: 4rem;
+      padding-left: 3rem;
+    }
+    .fa-facebook-official{
+      font-size: 4rem;
+      width: 4rem;
+    }
+
+  }
+}
+
+//media queries
+@media (max-width: 768px){
+  .menu-btn{
+    display: block;
+    visibility: visible;
+    position: absolute;
+    right: 4rem;
+    top: 4rem;
+  }
+  .header{
+    flex-direction: column;
+    background-color: #d4d9df;
+  }
+  .nav-list{
+    display: none;
+    
+  }
+  .active-menu{
+    display: block;
+  }
+  .nav-list{
+    .list-item{
+      display: block;
+      align-items: center;
+      border-bottom: 1px solid black;
+      transition: all 1s ease;
+    }
+  }
+  .hanger-img{
+    display: none;
+  }
+  .secondSec{
+    height: 50vh;
+    .gridView{
+      left: 5%;
+      justify-content: center;
+      grid-template-columns: repeat(3,auto);
+    }
+  }
+  .imageDisplay{
+    .stylishCloth{
+      .overlayText{
+        img{
+          width: 60vw;
+          // height: 40vh;
+        }
+      }
+        .outsideText{
+         display: none;
+        }
+    }
+    .comfortableCloth{
+      position: relative;
+      top: 3rem;
+      left: 13rem;
+      .overlayText{
+        img{
+          width: 60vw;
+          // height: 40vh;
+        }
+      }
+        .outsideText{
+         display: none;
+        }
+    }
+    .softCloth{
+      position: relative;
+      top: 2rem;
+      left: 13rem;
+      .overlayText{
+        img{
+          width: 60vw;
+          // height: 40vh;
+        }
+      }
+        .outsideText{
+         display: none;
+        }
+    }
+  }
+
+  
+}
